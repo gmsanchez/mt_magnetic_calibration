@@ -1,4 +1,4 @@
-TARGETS:= example_mti_receive_data example_mti_parse_logfile
+TARGETS:= example_mti_receive_data example_mti_parse_logfile example_mti_magnetic_calibration
 OBJLIBS	= xspublic
 INCLUDE=-I. -Ixspublic
 CFLAGS=-g $(INCLUDE)
@@ -13,6 +13,7 @@ xspublic :
 
 example_mti_receive_data: example_mti_receive_data.cpp.o
 example_mti_parse_logfile: example_mti_parse_logfile.cpp.o
+example_mti_magnetic_calibration: example_mti_magnetic_calibration.cpp.o
 
 $(TARGETS):
 	$(CXX) $(CFLAGS) $(INCLUDE) $^ -o $@ $(LFLAGS)
