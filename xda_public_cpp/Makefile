@@ -1,4 +1,4 @@
-TARGETS:= example_mti_receive_data example_mti_parse_logfile example_mti_magnetic_calibration
+TARGETS:= example_mti_configure_hibachi_output example_mti_receive_data example_mti_parse_logfile example_mti_magnetic_calibration
 OBJLIBS	= xspublic
 INCLUDE=-I. -Ixspublic
 CFLAGS=-g $(INCLUDE)
@@ -11,6 +11,7 @@ all : $(OBJLIBS) $(TARGETS)
 xspublic :
 	$(MAKE) -C xspublic $(MFLAGS)
 
+example_mti_configure_hibachi_output: example_mti_configure_hibachi_output.cpp.o
 example_mti_receive_data: example_mti_receive_data.cpp.o
 example_mti_parse_logfile: example_mti_parse_logfile.cpp.o
 example_mti_magnetic_calibration: example_mti_magnetic_calibration.cpp.o
